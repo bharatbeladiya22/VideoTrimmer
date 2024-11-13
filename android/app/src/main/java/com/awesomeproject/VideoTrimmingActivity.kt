@@ -1,14 +1,15 @@
-package com.example.videotrimmer
+package com.awesomeproject
 
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import com.example.videotrimmer.databinding.ActivityVideoTrimmingBinding
+import com.awesomeproject.databinding.ActivityVideoTrimmingBinding
 import com.redevrx.video_trimmer.event.OnVideoEditedEvent
 import java.io.File
 
@@ -62,7 +63,7 @@ class VideoTrimmingActivity : AppCompatActivity(), OnVideoEditedEvent {
     private fun setupVideoTrimmer(path: String) {
         val selectedUri = Uri.parse(path)
         binding.videoTrimmer.apply {
-            setVideoBackgroundColor(resources.getColor(R.color.white))
+            setVideoBackgroundColor(Color.WHITE)
             setOnTrimVideoListener(this@VideoTrimmingActivity)
             setVideoURI(selectedUri)
             setDestinationPath(FOLDER_PATH_TRIM_VIDEO_SAVER.absolutePath)
